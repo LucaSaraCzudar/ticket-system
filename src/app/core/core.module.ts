@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {NavigationBarComponent} from './components/navigation-bar/navigation-bar.component';
 import {SharedModule} from "../shared/shared.module";
 import { FooterComponent } from './components/footer/footer.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent
   ],
   imports: [
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class CoreModule {

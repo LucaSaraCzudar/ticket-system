@@ -1,0 +1,14 @@
+<div class="card col p-3">
+  <h2>Create new project</h2>
+  <form #createProjectForm="ngForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Project name</label>
+      <input type="text" class="form-control" [(ngModel)]="project.name" name="name" id="name">
+    </div>
+    <div class="mb-3 form-group">
+      <label for="description" class="form-label">Project description</label>
+      <textarea class="form-control" [(ngModel)]="project.description" name="description" rows="3" id="description"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
