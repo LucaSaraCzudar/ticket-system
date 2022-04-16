@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {AuthService} from "../../../auth/auth.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
   styles: [
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavigationBarComponent implements OnInit {
+export class NavigationBarComponent {
 
-  links = [
-    { title: 'Home', fragment: '/main' },
-    { title: 'Projects', fragment: 'projects/create' }
-  ];
+  isMenuCollapsed = true;
+  isLoggedIn: Observable<boolean> = this.authService.isLoggedIn;
 
-  constructor(public route: ActivatedRoute) {}
+  constructor(private readonly authService: AuthService) {}
 
-  ngOnInit(): void {
+  onLogout(): void {
+    this.isMenuCollapsed = true;
+    this.authService.logout();
   }
-
 }
