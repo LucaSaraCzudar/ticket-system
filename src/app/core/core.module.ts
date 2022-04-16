@@ -1,14 +1,17 @@
 import {NgModule} from '@angular/core';
 import {NavigationBarComponent} from './components/navigation-bar/navigation-bar.component';
 import {SharedModule} from "../shared/shared.module";
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    NavigationBarComponent
+    NavigationBarComponent,
+    FooterComponent
   ],
   exports: [
-    NavigationBarComponent
+    NavigationBarComponent,
+    FooterComponent
   ],
   imports: [
     SharedModule
